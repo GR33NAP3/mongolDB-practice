@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const User = require("../models/user")
 
-//get retreive all users
+//GET retreive all users
 router.get('/', async (req,res) => {
     try{
         const users = await User.find()
@@ -12,7 +12,7 @@ router.get('/', async (req,res) => {
     }
 })
 
-//get retrieve user by username
+//GET retrieve user by username
 router.get('/username/:username', async (req,res) => {
     const { username } = req.params
     try {
@@ -24,7 +24,7 @@ router.get('/username/:username', async (req,res) => {
     }    
 })
 
-//get retrieve user by id
+//GET retrieve user by id
 router.get('/id/:id', async (req,res) => {
     const { id } = req.params
     try {
@@ -36,7 +36,7 @@ router.get('/id/:id', async (req,res) => {
     }    
 })
 
-//delete user by id
+//DELETE delete user by id
 router.delete('/id/:id', async (req,res) => {
     const { id } = req.params
     try {
@@ -52,7 +52,7 @@ router.delete('/id/:id', async (req,res) => {
     }    
 })
 
-//post create user
+//POST create user
 router.post('/', async (req,res) => {
     try {
         // const { username, email, age, location } = req.body
